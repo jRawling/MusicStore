@@ -29,10 +29,7 @@ namespace MusicStore.Controllers
                     .AddDbContext<MusicStoreContext>();
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
-                    .AddEntityFrameworkStores<MusicStoreContext>()
-                    .AddDefaultTokenProviders()
-                    .AddMessageProvider<EmailMessageProvider>()
-                    .AddMessageProvider<SmsMessageProvider>();
+                    .AddEntityFrameworkStores<MusicStoreContext>();
 
             // IHttpContextAccessor is required for SignInManager, and UserManager
             services.AddInstance<IHttpContextAccessor>(new TestHttpContextAcccessor());
